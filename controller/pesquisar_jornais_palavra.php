@@ -54,11 +54,7 @@ session_start();
         
         $dados = $_SESSION['tableDataPalavra'];
         foreach ($dados as $dado) {
-            echo "<tr>";
-            echo "<td>" . $dado['ID_JORNAL'] . "</td>";
-            echo "<td>" . $dado['NUM_PAGINA'] . "</td>";
-            echo "<td>" . $dado['TEXTO'] . "</td>";
-            echo "</tr>";
+         
         }
         echo "</table>";
 

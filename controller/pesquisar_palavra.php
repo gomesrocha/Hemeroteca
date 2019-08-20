@@ -20,6 +20,7 @@ try{
 	}
 	//$sql = ("SELECT * FROM `TEXTOS_PAGINAS` WHERE (TEXTO like :data) ");
 	$sql_dir = ("SELECT J.ID_JORNAL,J.DAT_EDICAO, J.SUPLEMENTO, TP.NUM_PAGINA,(SELECT COUNT(*) FROM (SELECT J.DAT_EDICAO, J.SUPLEMENTO, TP.NUM_PAGINA FROM TEXTOS_PAGINAS TP, JORNAIS J WHERE J.ID_JORNAL = TP.ID_JORNAL AND TEXTO like lower(:data) AND (SELECT 1 FROM `JORNAIS`j WHERE  j.ID_JORNAL = TP.ID_JORNAL ORDER BY DAT_EDICAO ASC) GROUP BY J.DAT_EDICAO, J.SUPLEMENTO, TP.NUM_PAGINA) T) CONT FROM `TEXTOS_PAGINAS` TP, `JORNAIS` J WHERE J.ID_JORNAL = TP.ID_JORNAL AND TEXTO like lower(:data) AND (SELECT 1 FROM `JORNAIS`j WHERE  j.ID_JORNAL = TP.ID_JORNAL ORDER BY DAT_EDICAO ASC) GROUP BY J.DAT_EDICAO, J.SUPLEMENTO, TP.NUM_PAGINA ");
+
 	$resultado = $conn->prepare($sql_dir);
 	$resultado->bindValue(':data','%'.$data.'%',PDO::PARAM_STR);
 	
@@ -52,7 +53,7 @@ try{
 				echo "<tr>";
 				echo "<td>" . $row->ID_JORNAL  . "</td>";
 				echo "<td>" .$row->NUM_PAGINA . "</td>";
-				echo "<td>" . $row->TEXTO  . "</td>";
+				echo "<td>" . $row->TE  . "</td>";
 				echo "</tr>";
 				// $dir = $row->IMAGEM ;
 			}

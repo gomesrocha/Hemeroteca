@@ -26,12 +26,13 @@ try{
 				}
 				$dia = explode("-", $row->DAT_EDICAO);
 				$dir ='http://gpitic.tech/img/segrase_hemeroteca/'.$row->IMAGEM;
+				$thumb_dir ='http://gpitic.tech/img/segrase_hemeroteca/'.$row->IMAGEM;
 				if($capa<=1){
 					$capa_div =$capa_div.
 					'<div class="image-set col-md-3">
 					<a class="lightbox" data-magnify="gallery"data-caption="'.'Página 1'.'" href="'.
 					$dir.'">
-					<img style="width: 330px !important;  height:230px !important;" src="'.$dir.'" alt="">
+					<img style="width: 330px !important;  height:230px !important;" src="'.$thumb_dir.'" alt="">
 					</a>
 					<h4>
 					<figcaption style="text-align: center">Página 1</figcaption>
@@ -48,7 +49,7 @@ try{
 					<div class="image-set col-lg-3">
 					<a class="lightbox" data-magnify="gallery" data-caption="'.'Página '.$dia_pag.'"
 					href="'.$dir.'">
-					<img style="width: 240px !important;  height:460px !important;" src="'.$dir.'" alt="" >
+					<img style="width: 240px !important;  height:460px !important;" src="'.$thumb_dir.'" alt="" >
 					</a>
 					<figcaption style="text-align: center">Página '.$dia_pag.'</figcaption>
 					</div>';

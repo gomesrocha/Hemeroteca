@@ -4,7 +4,8 @@ session_start();
 $objDb = new db();
 $conn = $objDb->conecta_mysql();
 
-//"2011-01-10"
+
+
 
 
 try{
